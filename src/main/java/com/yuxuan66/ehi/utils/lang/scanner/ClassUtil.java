@@ -2,7 +2,11 @@ package com.yuxuan66.ehi.utils.lang.scanner;
 
 import cn.hutool.core.util.StrUtil;
 
+import java.lang.annotation.Annotation;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static com.yuxuan66.ehi.utils.lang.scanner.consts.CommonConsts.PACKAGE_SEPARATOR;
 import static com.yuxuan66.ehi.utils.lang.scanner.consts.CommonConsts.PATH_SEPARATOR;
@@ -71,5 +75,24 @@ public class ClassUtil {
      */
     public static boolean isAnonymousInnerClass(String className) {
         return ANONYMOUS_INNER_CLASS_PATTERN.matcher(className).matches();
+    }
+
+    /**
+     * 从给定的类的集合中获取包含指定注解的集合
+     * @param classList 类的集合
+     * @param annotationClass 注解类型
+     * @return 符合条件的类的集合
+     */
+    public static List<Class> getClassListByAnnotation(List<Class> classList, Class<? extends Annotation> annotationClass){
+       return classList.stream().filter(clazz -> clazz.isAnnotationPresent(annotationClass)).collect(Collectors.toList());
+    }
+    /**
+     * 从给定的类的集合中获取指定父类的集合
+     * @param classList 类的集合
+     * @param superClass 指定父类
+     * @return 符合条件的类的集合
+     */
+    public static List<Class> getClassListBySuperClass(List<Class> classList, Class superClass){
+        return classList.stream().filter(clazz -> superClass.isAssignableFrom(clazz)).collect(Collectors.toList());
     }
 }

@@ -11,8 +11,6 @@ import com.yuxuan66.ehi.support.core.annotaion.AppStartup;
 public class AppConsole {
 
     public static void main(String[] args) {
-        long startTime  = System.currentTimeMillis();
-       EhiMVC.start();
-        System.out.println("启动耗时:" + (System.currentTimeMillis() - startTime) + "ms");
+        EhiMVC.start();
     }
 }

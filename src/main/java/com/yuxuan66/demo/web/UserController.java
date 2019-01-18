@@ -1,16 +1,16 @@
 package com.yuxuan66.demo.web;
 
-import com.yuxuan66.ehi.support.mvc.annotaion.*;
+import com.yuxuan66.ehi.support.mvc.annotation.*;
 
 /**
  * @author Sir丶雨轩
  * @date 2019/1/17 11:49
  */
 @Action
-@Path("user")
+@Path("user/")
 public class UserController {
 
-    @Get("{id}")
+    @Get
     public void get(String id){
 
     }
@@ -18,7 +18,7 @@ public class UserController {
     public void add(){
 
     }
-    @Put
+    @Post("/update")
     public void update(){
 
     }

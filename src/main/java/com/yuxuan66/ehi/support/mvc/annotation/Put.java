@@ -1,4 +1,4 @@
-package com.yuxuan66.ehi.support.mvc.annotaion;
+package com.yuxuan66.ehi.support.mvc.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

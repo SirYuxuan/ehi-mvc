@@ -1,4 +1,4 @@
-package com.yuxuan66.ehi.support.mvc.annotaion;
+package com.yuxuan66.ehi.support.mvc.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -29,7 +29,11 @@ public @interface Action {
         /**
          * 数据修改请求
          */
-        Put
+        Put,
+        /**
+         * 支持所有请求
+         */
+        All
     }
 
     /**
@@ -42,5 +46,5 @@ public @interface Action {
      * 请求方式
      * @return
      */
-    ActionType[] actionType() default {ActionType.DEL,ActionType.GET,ActionType.Post,ActionType.Put};
+    ActionType[] actionType() default {ActionType.All};
 }

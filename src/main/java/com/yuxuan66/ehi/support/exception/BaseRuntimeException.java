@@ -19,14 +19,14 @@ public class BaseRuntimeException extends RuntimeException {
     }
 
     public BaseRuntimeException(ExceptionCode exceptionCode) {
-        super("RuntimeException FailCode:" + exceptionCode.value());
+        super("FailCode:" + exceptionCode.value());
     }
 
     public BaseRuntimeException(ExceptionCode exceptionCode, String msg) {
-        super("RuntimeException FailCode:" + exceptionCode.value() + "," + msg);
+        super("FailCode:" + exceptionCode.value() + "," + msg);
     }
 
     public BaseRuntimeException(ExceptionCode exceptionCode, CharSequence msg, Object... format) {
-        super("RuntimeException FailCode:" + exceptionCode.value() + "," + StrUtil.format(msg, format));
+        super("FailCode:" + exceptionCode.value() + "," + StrUtil.format(msg, format));
     }
 }

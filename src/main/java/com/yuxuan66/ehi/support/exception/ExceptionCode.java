@@ -8,7 +8,15 @@ public enum  ExceptionCode {
     /**
      * 初始化失败
      */
-    INITFAIL(10001);
+    NOTAPPSTARTUP(10001),
+    /**
+     * 配置文件已经存在
+     */
+    CONFIGEXIST(10002),
+    /**
+     * mapping重复
+     */
+    MAPPINGEXIST(10003);
     /**
      * 错误编号
      */
