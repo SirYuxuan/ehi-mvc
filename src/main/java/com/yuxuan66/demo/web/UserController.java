@@ -1,6 +1,9 @@
 package com.yuxuan66.demo.web;
 
+import com.yuxuan66.ehi.support.core.AppContext;
 import com.yuxuan66.ehi.support.mvc.annotation.*;
+
+import java.io.IOException;
 
 /**
  * @author Sir丶雨轩
@@ -11,8 +14,9 @@ import com.yuxuan66.ehi.support.mvc.annotation.*;
 public class UserController {
 
     @Get
-    public void get(String id){
-
+    public void get(String id) throws IOException {
+        AppContext.getInstance().getResponse().getOutputStream().print("用户ID:" + id);
+        System.out.println("执行完毕");
     }
     @Post
     public void add(){
